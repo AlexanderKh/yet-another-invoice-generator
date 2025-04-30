@@ -18,15 +18,8 @@ export const CompanyDetailsPreview: React.FC<CompanyDetails> = ({
     <p className="text-[11px] text-neutral-400 font-semibold uppercase pb-3.5">
       To
     </p>
-    <div className="h-10 mb-3">
-      {companyLogo ? (
-        <img src={companyLogo} alt="Company Logo" className="h-10 rounded-md" />
-      ) : (
-        <div className="rounded-full bg-neutral-100 h-10 w-10 animate-pulse" />
-      )}
-    </div>
     {companyName ? (
-      <p className="text-2xl font-medium">{companyName}</p>
+      <p className="text-base font-medium">{companyName}</p>
     ) : (
       <div className="rounded-md bg-neutral-100 h-5 w-5/6  animate-pulse mb-4" />
     )}

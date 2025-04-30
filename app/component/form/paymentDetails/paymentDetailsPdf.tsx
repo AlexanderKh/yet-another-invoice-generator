@@ -119,43 +119,26 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
               </Text>
             </View>
           ) : undefined}
-        </View>
-      </View>
-      <View
-        style={{
-          flex: 1,
-          paddingLeft: 40,
-          paddingRight: 12,
-          paddingVertical: 16,
-          flexDirection: "column",
-        }}
-      >
-        <Text style={{ ...pdfTypography.title, paddingBottom: 12 }}>
-          Payable in
-        </Text>
-        {currencyDetails && (
-          <View style={{ ...pdfUtils.flexRowItemCenter, gap: 8 }}>
-            <Image
-              src={countryImageUrl}
+          <View style={pdfUtils.flexRowItemCenter}>
+            <Text style={pdfTypography.paymentTitle}>Payable In</Text>
+            <Text
               style={{
-                width: 30,
-                height: 30,
-                flexShrink: 0,
-                borderRadius: "100%",
-                objectFit: "cover",
+                flex: 1,
+                ...pdfTypography.itemDescription,
+                paddingLeft: 50,
               }}
-            />
-            <View>
-              <Text style={{ fontSize: 14, fontWeight: "medium" }}>
-                {currencyDetails.currencyName}
-              </Text>
-              <Text style={pdfTypography.title}>
-                {currencyDetails.currencySymbol}{" "}
-                {currencyDetails.currencyShortForm}
-              </Text>
-            </View>
+            >
+              {currencyDetails?.currencyName}
+              {/*<Text style={{ fontSize: 14, fontWeight: "medium" }}>*/}
+              {/*  */}
+              {/*</Text>*/}
+              {/*<Text style={pdfTypography.title}>*/}
+              {/*  {currencyDetails?.currencySymbol}{" "}*/}
+              {/*  {currencyDetails?.currencyShortForm}*/}
+              {/*</Text>*/}
+            </Text>
           </View>
-        )}
+        </View>
       </View>
     </View>
   );

@@ -17,21 +17,14 @@ export const CompanyDetailsPdf: React.FC<CompanyDetails> = ({
 }) => (
   <View style={pdfContainers.CompanyDetails}>
     <Text style={{ ...pdfTypography.title, marginBottom: 14 }}>To</Text>
-    <View style={pdfContainers.imageContainer}>
-      {companyLogo && (
-        <Image src={companyLogo} style={{ height: 40, borderRadius: 6 }} />
-      )}
-    </View>
     {companyName && (
       <Text style={{ ...pdfTypography.text2xl, flexWrap: "wrap" }}>
         {companyName}
       </Text>
     )}
-    {email && (
-      <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
-        {email}
-      </Text>
-    )}
+    <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
+      {email || '‎'}
+    </Text>
     <View style={pdfTypography.description}>
       {companyAddress && <Text>{companyAddress}</Text>}
       {(companyCity || companyState || companyZip) && (

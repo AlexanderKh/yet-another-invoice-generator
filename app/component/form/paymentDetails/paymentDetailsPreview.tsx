@@ -20,7 +20,7 @@ export const PaymentDetailsPreview: React.FC<
 
   return (
     <div
-      className="grid grid-cols-2 group cursor-pointer relative"
+      className="grid grid-cols-1 group cursor-pointer relative"
       onClick={() => onClick && onClick("4")}
     >
       {!!onClick && (
@@ -106,27 +106,7 @@ export const PaymentDetailsPreview: React.FC<
           )}
         </div>
       </div>
-      <div className="py-4 px-10">
-        <p className="text-[11px] text-neutral-400 font-medium uppercase mb-3">
-          Payable in
-        </p>
-        {currencyDetails && (
-          <div className="flex gap-2 justify-between items-center w-full">
-            <div className="flex gap-3 items-center">
-              <currencyDetails.icon className="w-8 h-8 rounded-full" />
-              <div>
-                <p className="font-medium text-sm">
-                  {currencyDetails.currencyName}
-                </p>
-                <p className="text-xxs text-neutral-400">
-                  {currencyDetails.currencySymbol}{" "}
-                  {currencyDetails.currencyShortForm}
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+
     </div>
   );
 };

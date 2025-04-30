@@ -4,7 +4,7 @@
 
 import React from "react";
 import { Image, Text, View, pdf } from "@react-pdf/renderer";
-import { pdfContainers, pdfTypography } from "@/lib/pdfStyles";
+import {pdfContainers, pdfTypography, pdfUtils} from "@/lib/pdfStyles";
 
 export const YourDetailsPDF: React.FC<YourDetails> = ({
   yourEmail,
@@ -17,20 +17,13 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
   yourTaxId,
   yourZip,
 }) => (
-  <View style={pdfContainers.YourDetails}>
+  <View style={{...pdfContainers.YourDetails, ...pdfUtils.borderRight}}>
     <Text style={{ ...pdfTypography.title, marginBottom: 14 }}>From</Text>
 
-    <View style={pdfContainers.imageContainer}>
-      {yourLogo && (
-        <Image style={{ height: 40, borderRadius: 6 }} src={yourLogo} />
-      )}
-    </View>
     {yourName && <Text style={pdfTypography.text2xl}>{yourName}</Text>}
-    {yourEmail && (
-      <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
-        {yourEmail}
-      </Text>
-    )}
+    <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
+      {yourEmail || '‎'}
+    </Text>
     <View style={pdfTypography.description}>
       {yourAddress && <Text>{yourAddress}</Text>}
       {(yourCity || yourState || yourZip) && (
@@ -39,7 +32,7 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
         </Text>
       )}
       {yourCountry && <Text style={{ marginBottom: 4 }}>{yourCountry}</Text>}
-      {yourTaxId && <Text>Tax ID:{yourTaxId}</Text>}
+      {yourTaxId && <Text>Tax ID: {yourTaxId}</Text>}
     </View>
   </View>
 );

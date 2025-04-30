@@ -20,7 +20,7 @@ export const pdfTypography = StyleSheet.create({
         fontWeight: "medium",
     },
     text2xl: {
-        fontSize: 24,
+        fontSize: 16,
         fontWeight: 'medium'
     },
     description: {
@@ -89,14 +89,16 @@ export const pdfContainers = StyleSheet.create({
         flexDirection: 'row',
     },
     YourDetails: {
-        paddingHorizontal: 40,
+        paddingLeft: 40,
+        paddingRight: 30,
         paddingVertical: 16,
-        flex: 1
+        width: '50%'
     },
     CompanyDetails: {
-        paddingHorizontal: 40,
+        paddingRight: 40,
+        paddingLeft: 30,
         paddingVertical: 16,
-        flex: 1
+        width: '50%'
     },
     imageContainer: {
         width: "100%",
