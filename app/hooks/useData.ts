@@ -32,6 +32,7 @@ export const useData = () => {
   const routingCode = useGetValue("routingCode");
   const swiftCode = useGetValue("swiftCode");
   const ifscCode = useGetValue("ifscCode");
+  const intermediaryBank = useGetValue("intermediaryBank");
 
   const invoiceNumber = useGetValue("invoiceNo");
   const issueDate = useGetValue("issueDate");
@@ -60,6 +61,7 @@ export const useData = () => {
     routingCode: routingCode,
     swiftCode: swiftCode,
     ifscCode: ifscCode,
+    intermediaryBank: intermediaryBank,
     currency
   };
 

@@ -49,6 +49,7 @@ interface PaymentDetails {
   routingCode?: string | null;
   swiftCode?: string | null;
   ifscCode?: string | null;
+  intermediaryBank?: string | null;
   currency?: string;
 }
 

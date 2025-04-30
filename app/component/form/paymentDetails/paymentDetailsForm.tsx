@@ -34,5 +34,10 @@ export const PaymentDetailsForm = () => (
       placeholder="HSBCINAA123"
       variableName="swiftCode"
     />
+    <CustomNumberInput
+      label="Intermediary Bank"
+      placeholder="Citibank"
+      variableName="intermediaryBank"
+    />
   </div>
 );

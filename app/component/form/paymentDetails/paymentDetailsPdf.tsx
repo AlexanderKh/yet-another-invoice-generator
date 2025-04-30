@@ -15,6 +15,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
   routingCode,
   swiftCode,
   ifscCode,
+  intermediaryBank,
   currency = "INR",
   countryImageUrl,
 }) => {
@@ -49,7 +50,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
               style={{
                 flex: 1,
                 ...pdfTypography.itemDescription,
-                paddingLeft: 44.5,
+                paddingLeft: 48.5,
               }}
             >
               {bankName ? bankName : "-"}
@@ -61,7 +62,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
               style={{
                 flex: 1,
                 ...pdfTypography.itemDescription,
-                paddingLeft: 14,
+                paddingLeft: 18,
               }}
             >
               {accountNumber ? accountNumber : "-"}
@@ -73,7 +74,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
               style={{
                 flex: 1,
                 ...pdfTypography.itemDescription,
-                paddingLeft: 26,
+                paddingLeft: 30,
               }}
             >
               {accountName ? accountName : "-"}
@@ -85,7 +86,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
               style={{
                 flex: 1,
                 ...pdfTypography.itemDescription,
-                paddingLeft: 45,
+                paddingLeft: 49,
               }}
             >
               {swiftCode ? swiftCode : "-"}
@@ -98,10 +99,24 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
                 style={{
                   flex: 1,
                   ...pdfTypography.itemDescription,
-                  paddingLeft: 48,
+                  paddingLeft: 52,
                 }}
               >
                 {ifscCode}
+              </Text>
+            </View>
+          ) : undefined}
+          {intermediaryBank ? (
+            <View style={pdfUtils.flexRowItemCenter}>
+              <Text style={pdfTypography.paymentTitle}>Intermediary Bank</Text>
+              <Text
+                style={{
+                  flex: 1,
+                  ...pdfTypography.itemDescription,
+                  paddingLeft: 8,
+                }}
+              >
+                {intermediaryBank}
               </Text>
             </View>
           ) : undefined}
@@ -112,7 +127,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
                 style={{
                   flex: 1,
                   ...pdfTypography.itemDescription,
-                  paddingLeft: 32,
+                  paddingLeft: 36,
                 }}
               >
                 {routingCode}
@@ -125,7 +140,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
               style={{
                 flex: 1,
                 ...pdfTypography.itemDescription,
-                paddingLeft: 50,
+                paddingLeft: 54,
               }}
             >
               {currencyDetails?.currencyName}

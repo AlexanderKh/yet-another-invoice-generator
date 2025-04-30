@@ -10,6 +10,7 @@ export const PaymentDetailsPreview: React.FC<
   routingCode,
   swiftCode,
   ifscCode,
+  intermediaryBank,
   currency = "INR",
   onClick,
 }) => {
@@ -101,6 +102,26 @@ export const PaymentDetailsPreview: React.FC<
               </p>
               <p className="flex truncate text-xs font-medium text-gray-600">
                 {ifscCode}
+              </p>
+            </div>
+          )}
+          {intermediaryBank && (
+            <div className="mb-2 grid grid-cols-2 items-center">
+              <p className="truncate text-xs font-medium text-gray-500">
+                Intermediary Bank
+              </p>
+              <p className="flex truncate text-xs font-medium text-gray-600">
+                {intermediaryBank}
+              </p>
+            </div>
+          )}
+          {currencyDetails && (
+            <div className="mb-2 grid grid-cols-2 items-center">
+              <p className="truncate text-xs font-medium text-gray-500">
+                Payable In
+              </p>
+              <p className="flex truncate text-xs font-medium text-gray-600">
+                {currencyDetails.currencyName}
               </p>
             </div>
           )}
