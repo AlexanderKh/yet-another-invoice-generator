@@ -5,7 +5,6 @@ interface CompanyDetails {
   companyCity?: string | null;
   companyState?: string | null;
   companyCountry?: string | null;
-  companyLogo?: string | null;
   companyTaxId?: string | null;
   companyZip?: string | null;
 }
@@ -17,7 +16,6 @@ interface YourDetails {
   yourCity?: string | null;
   yourState?: string | null;
   yourCountry?: string | null;
-  yourLogo?: string | null;
   yourTaxId?: string | null;
   yourZip?: string | null;
 }
@@ -32,7 +30,6 @@ interface InvoiceItemDetails {
 
 interface Item {
   itemDescription: string;
-  qty?: number;
   amount?: number;
 }
 

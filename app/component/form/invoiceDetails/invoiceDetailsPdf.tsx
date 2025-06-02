@@ -8,7 +8,7 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
   discount,
   taxRate,
   items,
-  currency = "INR",
+  currency = "EUR",
 }) => {
   const currencyType = currency;
   const currencyDetails = currencyList.find(
@@ -33,18 +33,12 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
             paddingVertical: 16,
           }}
         >
-          {/*<View style={{ flex: 1 }}>*/}
-          {/*  <Text style={pdfTypography.title}>QTY</Text>*/}
-          {/*</View>*/}
-          {/*<View style={{ flex: 1 }}>*/}
-          {/*  <Text style={pdfTypography.title}>Price</Text>*/}
-          {/*</View>*/}
           <View style={{ flex: 1, textAlign: "right" }}>
             <Text style={pdfTypography.title}>Amount</Text>
           </View>
         </View>
       </View>
-      {items.map(({ itemDescription, amount, qty }, index) => {
+      {items.map(({ itemDescription, amount }, index) => {
         const containerStyle = {
           marginHorizontal: 40,
           paddingVertical: 14,
@@ -71,12 +65,6 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
                 paddingLeft: 80,
               }}
             >
-              {/*<Text style={{ flex: 1, ...pdfTypography.itemDescription }}>*/}
-              {/*  {qty ? qty : "-"}*/}
-              {/*</Text>*/}
-              {/*<Text style={{ flex: 1, ...pdfTypography.itemDescription }}>*/}
-              {/*  {amount ? addCommasToNumber(amount) : ""}*/}
-              {/*</Text>*/}
               <Text
                 style={{
                   flex: 1,
@@ -85,7 +73,7 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
                 }}
               >
                 {currencyDetails?.currencySymbol}
-                {amount ? addCommasToNumber((qty ? qty : 1) * amount) : ""}
+                {amount ? addCommasToNumber(amount) : ""}
               </Text>
             </View>
           </View>
@@ -101,28 +89,30 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
           )}
         </View>
         <View style={{ flex: 1 }}>
-          {/*<View*/}
-          {/*  style={{*/}
-          {/*    marginHorizontal: 40,*/}
-          {/*    paddingVertical: 14,*/}
-          {/*    ...pdfUtils.flexRowItemCenter,*/}
-          {/*    ...pdfUtils.borderBottom,*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>*/}
-          {/*    Subtotal*/}
-          {/*  </Text>*/}
-          {/*  <Text*/}
-          {/*    style={{*/}
-          {/*      ...pdfTypography.itemDescription,*/}
-          {/*      flex: 1,*/}
-          {/*      textAlign: "right",*/}
-          {/*    }}*/}
-          {/*  >*/}
-          {/*    {currencyDetails?.currencySymbol}*/}
-          {/*    {addCommasToNumber(subtotal)}*/}
-          {/*  </Text>*/}
-          {/*</View>*/}
+          {(discount || taxRate) && (
+            <View
+              style={{
+                marginHorizontal: 40,
+                paddingVertical: 14,
+                ...pdfUtils.flexRowItemCenter,
+                ...pdfUtils.borderBottom,
+              }}
+            >
+              <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
+                Subtotal
+              </Text>
+              <Text
+                style={{
+                  ...pdfTypography.itemDescription,
+                  flex: 1,
+                  textAlign: "right",
+                }}
+              >
+                {currencyDetails?.currencySymbol}
+                {addCommasToNumber(subtotal)}
+              </Text>
+            </View>
+          )}
           {discount && (
             <View
               style={{
@@ -196,9 +186,8 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
 
 const calculateTotalAmount = (items: Item[]): number =>
   items.reduce((total, item) => {
-    const quantity = item.qty ? +item.qty : 1;
     const amount = item.amount ? +item.amount : 0;
-    return total + quantity * amount;
+    return total + amount;
   }, 0);
 
 const addCommasToNumber = (number: number): string => {

@@ -10,7 +10,7 @@ import { Controller } from "react-hook-form";
 import { getItemValue } from "@/lib/getInitialValue";
 
 export const InvoiceDetailsForm = () => {
-  const value = useGetValue("currency", "INR");
+  const value = useGetValue("currency", "EUR");
   const currencyDetails = currencyList.find(
     (currency) => currency.value.toLowerCase() === value.toLowerCase()
   )?.details;
@@ -30,7 +30,7 @@ export const InvoiceDetailsForm = () => {
             <div>
               <p className="py-3 font-medium text-sm text-neutral-500">Items</p>
               {value.map(
-                ({ itemDescription, amount, qty }: Item, index: number) => (
+                ({ itemDescription, amount }: Item, index: number) => (
                   <div
                     className="flex relative items-center group -ml-8"
                     key={index}
@@ -64,40 +64,12 @@ export const InvoiceDetailsForm = () => {
                           updatedArray[index] = {
                             itemDescription: e.target.value,
                             amount,
-                            qty,
                           };
                           localStorage.setItem(
                             "items",
                             JSON.stringify(updatedArray)
                           );
                           onChange(updatedArray);
-                        }}
-                      />
-                    </div>
-                    <div className="w-14">
-                      <Input
-                        placeholder="Qat"
-                        value={`${qty || ""}`}
-                        type="text"
-                        pattern="[0-9]*"
-                        onChange={(e) => {
-                          const inputValue = e.target.value;
-                          if (
-                            /^-?\d*\.?\d*$/.test(inputValue) ||
-                            inputValue === ""
-                          ) {
-                            const updatedArray = [...value];
-                            updatedArray[index] = {
-                              itemDescription,
-                              amount,
-                              qty: +inputValue,
-                            };
-                            localStorage.setItem(
-                              "items",
-                              JSON.stringify(updatedArray)
-                            );
-                            onChange(updatedArray);
-                          }
                         }}
                       />
                     </div>
@@ -117,7 +89,6 @@ export const InvoiceDetailsForm = () => {
                             updatedArray[index] = {
                               itemDescription,
                               amount: +inputValue,
-                              qty,
                             };
                             localStorage.setItem(
                               "items",

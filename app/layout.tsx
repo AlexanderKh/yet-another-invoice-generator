@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import Script from "next/script";
+import {Font} from "@react-pdf/renderer";
 
 export const viewport: Viewport = {
   themeColor: "#f97316",
@@ -80,3 +81,4 @@ export default function RootLayout({
     </html>
   );
 }
+

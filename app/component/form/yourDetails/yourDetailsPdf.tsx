@@ -3,7 +3,7 @@
 "use client";
 
 import React from "react";
-import { Image, Text, View, pdf } from "@react-pdf/renderer";
+import {Text, View} from "@react-pdf/renderer";
 import {pdfContainers, pdfTypography, pdfUtils} from "@/lib/pdfStyles";
 
 export const YourDetailsPDF: React.FC<YourDetails> = ({
@@ -13,7 +13,6 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
   yourCity,
   yourState,
   yourCountry,
-  yourLogo,
   yourTaxId,
   yourZip,
 }) => (

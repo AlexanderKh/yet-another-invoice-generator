@@ -1,13 +1,12 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
-import ImageInput from "@/app/component/ui/imageInput";
 
 export const CompanyDetailsForm = () => (
   <div className="pt-24">
     <p className="text-2xl font-semibold pb-3">Company Details (To)</p>
     <CustomTextInput
       label="Email"
-      placeholder="e.g. pranav@prolab.sh"
+      placeholder="e.g. josh@example.com"
       variableName="email"
     />
     <p className="pb-10 pt-3 text-xs font-medium text-neutral-500">
@@ -19,7 +18,6 @@ export const CompanyDetailsForm = () => (
       placeholder="Prolab Inc"
       variableName="companyName"
     />
-    <ImageInput label="Logo" variableName="companyLogo" />
     <CustomTextInput
       label="Address"
       placeholder="Whitefield Circle,12"

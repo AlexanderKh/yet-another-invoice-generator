@@ -1,4 +1,4 @@
-import { useGetValue, useItemParams } from "@/app/hooks/useGetValue";
+import {useGetValue, useItemParams} from "@/app/hooks/useGetValue";
 
 export const useData = () => {
   const yourEmail = useGetValue("yourEmail");
@@ -7,7 +7,6 @@ export const useData = () => {
   const yourCity = useGetValue("yourCity");
   const yourState = useGetValue("yourState");
   const yourCountry = useGetValue("yourCountry");
-  const yourLogo = useGetValue("yourLogo");
   const yourTaxId = useGetValue("yourTaxId");
   const yourZip = useGetValue("yourZip");
 
@@ -17,7 +16,6 @@ export const useData = () => {
   const companyCity = useGetValue("companyCity");
   const companyState = useGetValue("companyState");
   const companyCountry = useGetValue("companyCountry");
-  const companyLogo = useGetValue("companyLogo");
   const companyTaxId = useGetValue("companyTaxId");
   const companyZip = useGetValue("companyZip");
 
@@ -38,7 +36,7 @@ export const useData = () => {
   const issueDate = useGetValue("issueDate");
   const dueDate = useGetValue("dueDate");
 
-  const currency = useGetValue("currency") || "INR";
+  const currency = useGetValue("currency") || "EUR";
 
   const invoiceTerms = {
     invoiceNumber,
@@ -71,7 +69,6 @@ export const useData = () => {
     yourCity,
     yourState,
     yourCountry,
-    yourLogo,
     yourEmail,
     yourTaxId,
     yourZip,
@@ -83,7 +80,6 @@ export const useData = () => {
     companyCity,
     companyState,
     companyCountry,
-    companyLogo,
     companyTaxId,
     companyZip,
     email,

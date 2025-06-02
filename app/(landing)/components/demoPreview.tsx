@@ -1,7 +1,9 @@
-import { PreviewDetails } from "@/app/component/form/previewDetails";
+"use client"
+
+import {PreviewDetails} from "@/app/component/form/previewDetails";
 
 const DemoPreview = () => (
-  <div className="mx-auto w-full flex justify-center items-center">
+  <div className="mx-auto w-full h-full flex justify-center items-center">
     <PreviewDetails
       companyDetails={defaultValue.companyDetails}
       invoiceDetails={defaultValue.invoiceDetails}
@@ -14,15 +16,14 @@ const DemoPreview = () => (
 
 const defaultValue = {
   companyDetails: {
-    companyName: "Prolab Inc",
+    companyName: "Example Co.",
     companyAddress: "1600 Amphitheatre Parkway",
     companyCity: "Mountain View",
     companyState: "CA",
     companyCountry: "USA",
-    companyLogo: "/android-chrome-192x192.png",
     companyTaxId: "",
     companyZip: "94043",
-    email: "support@prolab.sh",
+    email: "josh@example.com",
   },
   yourDetails: {
     yourName: "Pranav Patel",
@@ -30,7 +31,6 @@ const defaultValue = {
     yourCity: "Bengaluru",
     yourState: "Karnataka",
     yourCountry: "India",
-    yourLogo: "/pranav.png",
     yourEmail: "hi@pranavp.xyz",
     yourTaxId: "",
     yourZip: "560038",
@@ -38,7 +38,7 @@ const defaultValue = {
   paymentDetails: {
     bankName: "Axis Bank",
     accountNumber: "1234567890",
-    accountName: "PRANAV",
+    accountName: "ABCD",
     routingCode: "123456",
     swiftCode: "AXISINBB1234",
     ifscCode: "UTIB0000000",
@@ -58,12 +58,10 @@ const defaultValue = {
       {
         itemDescription: "Software Development Services",
         amount: 225000,
-        qty: 0,
       },
       {
         itemDescription: "Hosting Charge",
         amount: 22000,
-        qty: 0,
       },
     ],
     currency: "INR",

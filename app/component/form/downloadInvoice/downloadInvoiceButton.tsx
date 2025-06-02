@@ -1,16 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Document, Font, Page } from "@react-pdf/renderer";
-import { CheckCircle2, Download, LoaderIcon, SplineIcon } from "lucide-react";
-import { PdfDetails } from "../pdfDetails";
-import { useData } from "@/app/hooks/useData";
-import { pdfContainers } from "@/lib/pdfStyles";
-import { saveAs } from "file-saver";
-import { pdf } from "@react-pdf/renderer";
-import { svgToDataUri } from "@/lib/svgToDataUri";
-import { useEffect, useState } from "react";
-import { currencyList } from "@/lib/currency";
+import {Button} from "@/components/ui/button";
+import {Document, Font, Page, pdf} from "@react-pdf/renderer";
+import {CheckCircle2, Download, LoaderIcon} from "lucide-react";
+import {PdfDetails} from "../pdfDetails";
+import {useData} from "@/app/hooks/useData";
+import {pdfContainers} from "@/lib/pdfStyles";
+import {saveAs} from "file-saver";
+import {useEffect, useState} from "react";
+
 export const DownloadInvoiceButton = () => {
   const [status, setStatus] = useState<
     "downloaded" | "downloading" | "not-downloaded"
@@ -31,6 +29,30 @@ export const DownloadInvoiceButton = () => {
     }
   }, [status]);
 
+  const downloadClickHandler = async () => {
+    try {
+      setStatus("downloading");
+      const blob = await pdf(
+        <Document>
+          <Page size="A4" style={pdfContainers.page}>
+            <PdfDetails
+              companyDetails={companyDetails}
+              invoiceDetails={invoiceDetails}
+              invoiceTerms={invoiceTerms}
+              paymentDetails={paymentDetails}
+              yourDetails={yourDetails}
+            />
+          </Page>
+        </Document>
+      ).toBlob();
+      saveAs(blob, "invoice.pdf");
+      setStatus("downloaded");
+    } catch (e) {
+      console.error(e);
+      setStatus("not-downloaded");
+    }
+  }
+
   return (
     <div className="flex h-[calc(100vh-208px)] justify-center items-center">
       <div>
@@ -40,52 +62,7 @@ export const DownloadInvoiceButton = () => {
         </p>
         <Button
           disabled={status === "downloading"}
-          onClick={async () => {
-            try {
-              setStatus("downloading");
-              const currencyDetails = currencyList.find(
-                (currencyDetail) =>
-                  currencyDetail.value.toLowerCase() ===
-                  invoiceDetails.currency.toLowerCase()
-              )?.details;
-
-              const defaultCurrency = currencyList.find(
-                (currencyDetail) =>
-                  currencyDetail.value.toLowerCase() === "INR".toLowerCase()
-              )?.details;
-
-              const data = await fetch(
-                `/flag/1x1/${
-                  currencyDetails?.iconName || defaultCurrency?.iconName
-                }.svg`
-              );
-              const svgFlag = await data.text();
-              const countryImageUrl = await svgToDataUri(svgFlag);
-              if (countryImageUrl) {
-                const blob = await pdf(
-                  <Document>
-                    <Page size="A4" style={pdfContainers.page}>
-                      <PdfDetails
-                        companyDetails={companyDetails}
-                        invoiceDetails={invoiceDetails}
-                        invoiceTerms={invoiceTerms}
-                        paymentDetails={paymentDetails}
-                        yourDetails={yourDetails}
-                        countryImageUrl={countryImageUrl}
-                      />
-                    </Page>
-                  </Document>
-                ).toBlob();
-                saveAs(blob, "invoice.pdf");
-                setStatus("downloaded");
-              } else {
-                setStatus("not-downloaded");
-              }
-            } catch (e) {
-              console.error(e);
-              setStatus("not-downloaded");
-            }
-          }}
+          onClick={downloadClickHandler}
           type="button"
           className="w-full h-12 rounded-lg text-lg"
         >
@@ -110,6 +87,7 @@ export const DownloadInvoiceButton = () => {
     </div>
   );
 };
+
 
 Font.register({
   family: "Geist",

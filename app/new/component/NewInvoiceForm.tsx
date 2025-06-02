@@ -46,9 +46,11 @@ export const NewInvoiceForm = () => {
             </div>
             <FormSteps />
           </div>
-          <div className="relative min-h-screen h-full w-full flex justify-center items-center p-4 md:p-0">
+          <div className="relative min-h-screen h-full w-full flex flex-col justify-center items-stretch p-4 md:p-0">
             <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-            <UserDataPreview />
+            <div className="grow w-full h-screen">
+              <UserDataPreview />
+            </div>
           </div>
         </FormProvider>
       ) : (
