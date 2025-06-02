@@ -1,24 +1,18 @@
 "use client";
 
 import * as React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { DayPicker } from "react-day-picker";
+import {DayPicker, DayPickerSingleProps} from "react-day-picker";
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import {cn} from "@/lib/utils";
+import {buttonVariants} from "@/components/ui/button";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
-
-function Calendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}: CalendarProps) {
+function Calendar({ onSelect, selected }: DayPickerSingleProps) {
   return (
     <DayPicker
-      showOutsideDays={showOutsideDays}
-      className={cn("p-3", className)}
+      mode='single'
+      weekStartsOn={1}
+      showOutsideDays={true}
+      className="p-3"
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
@@ -52,13 +46,9 @@ function Calendar({
         day_range_middle:
           "aria-selected:bg-slate-100 aria-selected:text-slate-900 dark:aria-selected:bg-slate-800 dark:aria-selected:text-slate-50",
         day_hidden: "invisible",
-        ...classNames,
       }}
-      components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
-      }}
-      {...props}
+      onSelect={onSelect}
+      selected={selected}
     />
   );
 }

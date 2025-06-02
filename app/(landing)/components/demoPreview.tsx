@@ -1,18 +1,30 @@
 "use client"
 
 import {PreviewDetails} from "@/app/component/form/previewDetails";
+import {useEffect, useState} from "react";
 
-const DemoPreview = () => (
-  <div className="mx-auto w-full h-full flex justify-center items-center">
-    <PreviewDetails
-      companyDetails={defaultValue.companyDetails}
-      invoiceDetails={defaultValue.invoiceDetails}
-      invoiceTerms={defaultValue.invoiceTerms}
-      paymentDetails={defaultValue.paymentDetails}
-      yourDetails={defaultValue.yourDetails}
-    />
-  </div>
-);
+const DemoPreview = () => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
+  return (
+    <div className="mx-auto w-full h-full flex justify-center items-center">
+      <PreviewDetails
+        companyDetails={defaultValue.companyDetails}
+        invoiceDetails={defaultValue.invoiceDetails}
+        invoiceTerms={defaultValue.invoiceTerms}
+        paymentDetails={defaultValue.paymentDetails}
+        yourDetails={defaultValue.yourDetails}
+      />
+    </div>
+  );
+}
 
 const defaultValue = {
   companyDetails: {
