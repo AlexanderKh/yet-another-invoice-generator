@@ -43,9 +43,8 @@ interface PaymentDetails {
   bankName?: string | null;
   accountNumber?: string | null;
   accountName?: string | null;
-  routingCode?: string | null;
+  routingInfo?: string | null;
   swiftCode?: string | null;
-  ifscCode?: string | null;
   intermediaryBank?: string | null;
   currency?: string;
 }

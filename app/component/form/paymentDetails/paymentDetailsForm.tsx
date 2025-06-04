@@ -5,12 +5,12 @@ export const PaymentDetailsForm = () => (
   <div>
     <p className="text-2xl font-semibold pb-3">Payment Details</p>
     <CustomTextInput
-      label="Bank name"
+      label="Bank Name"
       placeholder="HSBC"
       variableName="bankName"
     />
     <CustomTextInput
-      label="Account number"
+      label="Account Number"
       placeholder="8920804195"
       variableName="accountNumber"
     />
@@ -20,17 +20,12 @@ export const PaymentDetailsForm = () => (
       variableName="accountName"
     />
     <CustomTextInput
-      label="IFSC code"
-      placeholder="HSBC0560002"
-      variableName="ifscCode"
-    />
-    <CustomTextInput
-      label="Routing number"
-      placeholder="0804189592"
-      variableName="routingCode"
+      label="Routing Information"
+      placeholder="Routing Number: 12345"
+      variableName="routingInfo"
     />
     <CustomNumberInput
-      label="Swift code"
+      label="Swift Code"
       placeholder="HSBCINAA123"
       variableName="swiftCode"
     />

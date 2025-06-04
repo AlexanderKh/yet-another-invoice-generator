@@ -80,7 +80,7 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
         );
       })}
       <View style={pdfUtils.flexRowItemCenter}>
-        <View style={{ flex: 1, paddingTop: 24 }}>
+        <View style={{ flex: 1 }}>
           {note && (
             <View style={{ paddingHorizontal: 40 }}>
               <Text style={pdfTypography.title}>Note</Text>
