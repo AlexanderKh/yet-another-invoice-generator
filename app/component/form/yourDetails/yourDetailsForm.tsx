@@ -9,10 +9,7 @@ export const YourDetailsForm = () => (
       placeholder="e.g. josh@example.com"
       variableName="yourEmail"
     />
-    <p className="pb-10 pt-3 text-xs font-medium text-neutral-500">
-      We&apos;ll fill the billing details automatically if we find the your.
-    </p>
-    <p className="pb-2 text-sm font-medium text-neutral-500">Billing details</p>
+    <p className="pb-2 pt-6 text-sm font-medium text-neutral-500">Billing details</p>
     <CustomTextInput
       label="Your Name"
       placeholder="Pranav"

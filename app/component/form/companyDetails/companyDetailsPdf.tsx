@@ -11,7 +11,6 @@ export const CompanyDetailsPdf: React.FC<CompanyDetails> = ({
   companyCity,
   companyState,
   companyCountry,
-  companyLogo,
   companyTaxId,
   companyZip,
 }) => (
