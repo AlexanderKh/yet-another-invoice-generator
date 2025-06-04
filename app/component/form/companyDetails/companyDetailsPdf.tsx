@@ -28,7 +28,7 @@ export const CompanyDetailsPdf: React.FC<CompanyDetails> = ({
       {companyAddress && <Text>{companyAddress}</Text>}
       {(companyCity || companyState || companyZip) && (
         <Text style={{ marginBottom: 2 }}>
-          {companyCity}, {companyState} {companyZip}
+          {[[companyCity, companyState].filter(Boolean).join(', '), companyZip].filter(Boolean).join(' ')}
         </Text>
       )}
       {companyCountry && (

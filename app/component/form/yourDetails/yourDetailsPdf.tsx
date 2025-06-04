@@ -27,7 +27,7 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
       {yourAddress && <Text>{yourAddress}</Text>}
       {(yourCity || yourState || yourZip) && (
         <Text style={{ marginBottom: 2 }}>
-          {yourCity}, {yourState} {yourZip}
+          {[[yourCity, yourState].filter(Boolean).join(', '), yourZip].filter(Boolean).join(' ')}
         </Text>
       )}
       {yourCountry && <Text style={{ marginBottom: 4 }}>{yourCountry}</Text>}
