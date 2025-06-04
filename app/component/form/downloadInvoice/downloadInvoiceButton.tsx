@@ -3,7 +3,7 @@
 import {Button} from "@/components/ui/button";
 import {Document, Font, Page, pdf} from "@react-pdf/renderer";
 import {CheckCircle2, Download, LoaderIcon} from "lucide-react";
-import {PdfDetails} from "../pdfDetails";
+import {PDFDocument} from "../pdfDocument";
 import {useData} from "@/app/hooks/useData";
 import {pdfContainers} from "@/lib/pdfStyles";
 import {saveAs} from "file-saver";
@@ -35,7 +35,7 @@ export const DownloadInvoiceButton = () => {
       const blob = await pdf(
         <Document>
           <Page size="A4" style={pdfContainers.page}>
-            <PdfDetails
+            <PDFDocument
               companyDetails={companyDetails}
               invoiceDetails={invoiceDetails}
               invoiceTerms={invoiceTerms}
