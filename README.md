@@ -9,7 +9,7 @@ I was looking for an app to generate good-looking invoices and found above-menti
 The list of changes in this version:
 * Upgraded most of the dependencies to fresh versions.
 * Added Intermediate Bank field.
-* Made Swift Code optional.
+* Renamed Swift Code to SWIFT / BIC Code and made it optional.
 * Removed IFSC Code and replaced Routing Code with Routing Info as universal solution to various national EFT systems.
 * Removed invoice item counts. This can be added to item description, but we get precious horizontal space.
 * Removed currency icons and make "payable in" just another line at the bottom. This looks way more professional and saves space.

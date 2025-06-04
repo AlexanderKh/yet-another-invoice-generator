@@ -9,7 +9,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetails> = ({
   accountNumber,
   accountName,
   routingInfo,
-  swiftCode,
+  swiftBicCode,
   intermediaryBank,
   currency = "EUR",
 }) => {
@@ -55,7 +55,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetails> = ({
           {tableRow('Bank Name', bankName)}
           {tableRow('Account Number', accountNumber)}
           {tableRow('Account Name', accountName)}
-          {swiftCode ? tableRow('Swift Code', swiftCode) : null}
+          {swiftBicCode ? tableRow('SWIFT / BIC Code', swiftBicCode) : null}
           {intermediaryBank ? tableRow('Intermediary Bank', intermediaryBank) : null}
           {routingInfo ? tableRow('Routing Information', routingInfo) : null}
           {currencyDetails?.currencyName ? tableRow('Payable In', currencyDetails?.currencyName) : null}

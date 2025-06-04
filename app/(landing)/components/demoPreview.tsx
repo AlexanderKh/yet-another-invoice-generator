@@ -52,14 +52,14 @@ const defaultValue = {
     accountNumber: "1234567890",
     accountName: "ABCD",
     routingInfo: "Routing Number: 12345",
-    swiftCode: "AXISINBB1234",
+    swiftBicCode: "AXISINBB1234",
     intermediaryBank: "Citibank",
     currency: "INR",
   },
   invoiceTerms: {
     invoiceNumber: "Invoice #25",
-    issueDate: "Fri Apr 19 2024 00:00:00 GMT+0530 (India Standard Time)",
-    dueDate: "Mon Apr 22 2024 00:00:00 GMT+0530 (India Standard Time)",
+    issueDate: "Fri Apr 19 2024 00:00:00 UTC",
+    dueDate: "Mon Apr 22 2024 00:00:00 UTC",
   },
   invoiceDetails: {
     note: "Services Period  21/03/2024 to 20/04/2024",

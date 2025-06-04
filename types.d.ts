@@ -44,7 +44,7 @@ interface PaymentDetails {
   accountNumber?: string | null;
   accountName?: string | null;
   routingInfo?: string | null;
-  swiftCode?: string | null;
+  swiftBicCode?: string | null;
   intermediaryBank?: string | null;
   currency?: string;
 }

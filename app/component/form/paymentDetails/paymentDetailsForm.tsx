@@ -25,9 +25,9 @@ export const PaymentDetailsForm = () => (
       variableName="routingInfo"
     />
     <CustomNumberInput
-      label="Swift Code"
+      label="SWIFT / BIC Code"
       placeholder="HSBCINAA123"
-      variableName="swiftCode"
+      variableName="swiftBicCode"
     />
     <CustomNumberInput
       label="Intermediary Bank"

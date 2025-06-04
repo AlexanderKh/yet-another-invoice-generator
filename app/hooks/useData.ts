@@ -28,7 +28,7 @@ export const useData = () => {
   const accountNumber = useGetValue("accountNumber");
   const accountName = useGetValue("accountName");
   const routingInfo = useGetValue("routingInfo");
-  const swiftCode = useGetValue("swiftCode");
+  const swiftBicCode = useGetValue("swiftBicCode");
   const intermediaryBank = useGetValue("intermediaryBank");
 
   const invoiceNumber = useGetValue("invoiceNo");
@@ -56,7 +56,7 @@ export const useData = () => {
     accountNumber,
     accountName,
     routingInfo,
-    swiftCode,
+    swiftBicCode,
     intermediaryBank,
     currency,
   };
