@@ -29,7 +29,7 @@ export const NewInvoiceForm = () => {
     <>
       {isClient ? (
         <FormProvider {...methods}>
-          <div className="max-w-lg min-h-screen w-full h-full p-4 md:p-12 md:border-r border-dashed flex flex-col justify-between">
+          <div className="max-w-lg md:min-h-screen w-full h-full p-4 md:p-12 md:border-r border-dashed flex flex-col justify-between gap-2">
             <div
               className="flex gap-2 items-center select-none cursor-pointer rounded-lg hover:bg-gray-50 self-start p-1"
               onClick={() => router.push('/')}

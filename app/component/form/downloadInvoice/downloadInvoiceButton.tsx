@@ -1,11 +1,10 @@
 "use client";
 
 import {Button} from "@/components/ui/button";
-import {Document, Font, Page, pdf} from "@react-pdf/renderer";
+import {Font, pdf} from "@react-pdf/renderer";
 import {CheckCircle2, Download, LoaderIcon} from "lucide-react";
 import {PDFDocument} from "../pdfDocument";
 import {useData} from "@/app/hooks/useData";
-import {pdfContainers} from "@/lib/pdfStyles";
 import {saveAs} from "file-saver";
 import {useEffect, useState} from "react";
 
@@ -50,7 +49,7 @@ export const DownloadInvoiceButton = () => {
   }
 
   return (
-    <div className="flex h-[calc(100vh-208px)] justify-center items-center">
+    <div className="flex justify-center items-center">
       <div>
         <h1 className="text-5xl font-semibold pb-6">Your invoice is ready</h1>
         <p className="text-neutral-500 text-xl pb-7">
