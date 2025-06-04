@@ -18,9 +18,9 @@ export const InvoiceDetailsForm = () => {
   return (
     <Controller
       render={({ field: { onChange, value } }) => (
-        <div className="pt-24">
+        <div>
           <p className="text-2xl font-semibold pb-3">Invoice Details</p>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 justify-start">
             <div>
               <p className="pt-3 font-medium text-neutral-500">
                 Select an invoice currency

@@ -33,17 +33,13 @@ export const DownloadInvoiceButton = () => {
     try {
       setStatus("downloading");
       const blob = await pdf(
-        <Document>
-          <Page size="A4" style={pdfContainers.page}>
-            <PDFDocument
-              companyDetails={companyDetails}
-              invoiceDetails={invoiceDetails}
-              invoiceTerms={invoiceTerms}
-              paymentDetails={paymentDetails}
-              yourDetails={yourDetails}
-            />
-          </Page>
-        </Document>
+        <PDFDocument
+          companyDetails={companyDetails}
+          invoiceDetails={invoiceDetails}
+          invoiceTerms={invoiceTerms}
+          paymentDetails={paymentDetails}
+          yourDetails={yourDetails}
+        />
       ).toBlob();
       saveAs(blob, "invoice.pdf");
       setStatus("downloaded");

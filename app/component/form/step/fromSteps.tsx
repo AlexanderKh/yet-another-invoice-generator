@@ -8,7 +8,7 @@ export const FormSteps = () => {
   const stepValueDetails = getStepsDetails(stepValue);
 
   return (
-    <div className="flex gap-9 justify-between">
+    <div className="flex gap-8 justify-between">
       {stepValueDetails.previous ? (
         <StepButton
           step={stepValueDetails.previous.step}
@@ -16,7 +16,7 @@ export const FormSteps = () => {
           isPrevious
         />
       ) : (
-        <div className="flex-1" />
+        <div className="w-1/2" />
       )}
       {stepValueDetails.nextStep ? (
         <StepButton
@@ -24,7 +24,7 @@ export const FormSteps = () => {
           title={stepValueDetails.nextStep.title}
         />
       ) : (
-        <div className="flex-1" />
+        <div className="w-1/2" />
       )}
     </div>
   );

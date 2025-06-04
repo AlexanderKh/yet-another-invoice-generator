@@ -2,7 +2,7 @@ import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
 
 export const CompanyDetailsForm = () => (
-  <div className="pt-24">
+  <div>
     <p className="text-2xl font-semibold pb-3">Company Details (To)</p>
     <CustomTextInput
       label="Email"
