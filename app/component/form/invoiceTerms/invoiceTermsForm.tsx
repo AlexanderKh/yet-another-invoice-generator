@@ -1,13 +1,14 @@
 "use client";
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import DateInput from "@/app/component/ui/dateInput";
+import {defaultValue} from "@/app/(landing)/components/demoPreview";
 
 export const InvoiceTermsForm = () => (
   <div>
     <p className="text-2xl font-semibold pb-3">Invoice terms</p>
     <CustomTextInput
       label="Invoice number"
-      placeholder="INVOICE-01"
+      placeholder={defaultValue.invoiceTerms.invoiceNumber}
       variableName="invoiceNo"
     />
     <DateInput label="Issue date" variableName="issueDate" />

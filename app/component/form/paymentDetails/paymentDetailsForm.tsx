@@ -1,37 +1,38 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
+import {defaultValue} from "@/app/(landing)/components/demoPreview";
 
 export const PaymentDetailsForm = () => (
   <div>
     <p className="text-2xl font-semibold pb-3">Payment Details</p>
     <CustomTextInput
       label="Bank Name"
-      placeholder="HSBC"
+      placeholder={defaultValue.paymentDetails.bankName}
       variableName="bankName"
     />
     <CustomTextInput
       label="Account Number"
-      placeholder="8920804195"
+      placeholder={defaultValue.paymentDetails.accountNumber}
       variableName="accountNumber"
     />
     <CustomTextInput
       label="Account Name"
-      placeholder="Pranav"
+      placeholder={defaultValue.paymentDetails.accountName}
       variableName="accountName"
     />
     <CustomTextInput
       label="Routing Information"
-      placeholder="Routing Number: 12345"
+      placeholder={defaultValue.paymentDetails.routingInfo}
       variableName="routingInfo"
     />
     <CustomNumberInput
       label="SWIFT / BIC Code"
-      placeholder="HSBCINAA123"
+      placeholder={defaultValue.paymentDetails.swiftBicCode}
       variableName="swiftBicCode"
     />
     <CustomNumberInput
       label="Intermediary Bank"
-      placeholder="Citibank"
+      placeholder={defaultValue.paymentDetails.intermediaryBank}
       variableName="intermediaryBank"
     />
   </div>

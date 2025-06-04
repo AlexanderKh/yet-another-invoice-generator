@@ -1,48 +1,49 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
+import {defaultValue} from "@/app/(landing)/components/demoPreview";
 
 export const YourDetailsForm = () => (
   <div>
     <p className="text-2xl font-semibold pb-3">Your Details (From)</p>
     <CustomTextInput
       label="Email"
-      placeholder="e.g. josh@example.com"
+      placeholder={defaultValue.yourDetails.yourEmail}
       variableName="yourEmail"
     />
     <p className="pb-2 pt-6 text-sm font-medium text-neutral-500">Billing details</p>
     <CustomTextInput
       label="Your Name"
-      placeholder="Pranav"
+      placeholder={defaultValue.yourDetails.yourName}
       variableName="yourName"
     />
     <CustomTextInput
       label="Address"
-      placeholder="Whitefield Circle,12"
+      placeholder={defaultValue.yourDetails.yourAddress}
       variableName="yourAddress"
     />
     <CustomTextInput
       label="City"
-      placeholder="Bangalore"
+      placeholder={defaultValue.yourDetails.yourCity}
       variableName="yourCity"
     />
     <CustomTextInput
       label="State"
-      placeholder="Karnataka"
+      placeholder={defaultValue.yourDetails.yourState}
       variableName="yourState"
     />
     <CustomNumberInput
       label="Zip"
-      placeholder="560066"
+      placeholder={defaultValue.yourDetails.yourZip}
       variableName="yourZip"
     />
     <CustomTextInput
       label="Country"
-      placeholder="India"
+      placeholder={defaultValue.yourDetails.yourCountry}
       variableName="yourCountry"
     />
     <CustomTextInput
       label="Tax ID"
-      placeholder="GSTIN 1234"
+      placeholder={defaultValue.yourDetails.yourTaxId}
       variableName="yourTaxId"
     />
   </div>

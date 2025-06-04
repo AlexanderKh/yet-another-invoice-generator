@@ -26,7 +26,7 @@ const DemoPreview = () => {
   );
 }
 
-const defaultValue = {
+export const defaultValue = {
   companyDetails: {
     email: "ryleehood484@hotmail.org",
     companyName: "Arsenio Atkinson",
@@ -57,7 +57,7 @@ const defaultValue = {
     currency: "USD",
   },
   invoiceTerms: {
-    invoiceNumber: "Invoice #25",
+    invoiceNumber: "INV-25",
     issueDate: "Fri Apr 19 2024 00:00:00 UTC",
     dueDate: "Mon Apr 22 2024 00:00:00 UTC",
   },
