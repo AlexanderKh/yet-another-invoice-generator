@@ -28,7 +28,7 @@ const DemoPreview = () => {
 
 export const defaultValue = {
   companyDetails: {
-    email: "ryleehood484@hotmail.org",
+    companyEmail: "ryleehood484@hotmail.org",
     companyName: "Arsenio Atkinson",
     companyAddress: "439-5451 At St.",
     companyCity: "Bolzano Vicentino",

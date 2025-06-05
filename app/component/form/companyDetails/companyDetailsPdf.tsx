@@ -5,7 +5,7 @@ import { Text, View, Image } from "@react-pdf/renderer";
 import { pdfContainers, pdfTypography } from "@/lib/pdfStyles";
 
 export const CompanyDetailsPdf: React.FC<CompanyDetails> = ({
-  email,
+  companyEmail,
   companyName,
   companyAddress,
   companyCity,
@@ -22,7 +22,7 @@ export const CompanyDetailsPdf: React.FC<CompanyDetails> = ({
       </Text>
     )}
     <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
-      {email || '‎'}
+      {companyEmail || '‎'}
     </Text>
     <View style={pdfTypography.description}>
       {companyAddress && <Text>{companyAddress}</Text>}

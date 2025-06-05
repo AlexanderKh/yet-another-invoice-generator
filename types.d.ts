@@ -1,5 +1,5 @@
 interface CompanyDetails {
-  email?: string | null;
+  companyEmail?: string | null;
   companyName?: string | null;
   companyAddress?: string | null;
   companyCity?: string | null;

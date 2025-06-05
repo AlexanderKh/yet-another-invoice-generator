@@ -6,7 +6,7 @@ export const YourDetailsForm = () => (
   <div>
     <p className="text-2xl font-semibold pb-3">Your Details (From)</p>
     <CustomTextInput
-      label="Email"
+      label="Your Email"
       placeholder={defaultValue.yourDetails.yourEmail}
       variableName="yourEmail"
     />

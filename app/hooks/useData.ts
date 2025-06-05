@@ -10,7 +10,7 @@ export const useData = () => {
   const yourTaxId = useGetValue("yourTaxId");
   const yourZip = useGetValue("yourZip");
 
-  const email = useGetValue("email");
+  const companyEmail = useGetValue("companyEmail");
   const companyName = useGetValue("companyName");
   const companyAddress = useGetValue("companyAddress");
   const companyCity = useGetValue("companyCity");
@@ -80,7 +80,7 @@ export const useData = () => {
     companyCountry,
     companyTaxId,
     companyZip,
-    email,
+    companyEmail,
   };
 
   return {
