@@ -2,6 +2,9 @@
 
 This project provides a user-friendly invoice generation tool for freelancers, small businesses, and contractors. Create professional, customized invoices quickly and easily to ensure you get paid on time, every time.
 
+## 🌐 Live Version
+[Live Invoice Generator Link](https://invoice-generator.vercel.app/)
+
 ## ⑂ Fork Info
 This is a fork of https://github.com/pranavp10/invoice-generator.
 I was looking for an app to generate good-looking invoices and found above-mentioned app, which did *almost* what I wanted.
@@ -17,10 +20,7 @@ The list of changes in this version:
 * Made subtotal show only when modifiers are applied. This saves vertical space in most cases.
 * Made company information look the same both left and right even if some data is missing.
 * Removed hand-crafted preview components and replaced with native preview from react-pdf library.
-* Improved application display for mobile screen.
-
-## 🌐 Live Version
-[Live Invoice Generator Link](https://invoice-generator.vercel.app/)
+* Made multiple minor code and UI improvements.
 
 ## 📌 Key Features
 
