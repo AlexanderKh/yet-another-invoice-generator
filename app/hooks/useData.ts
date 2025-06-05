@@ -37,13 +37,13 @@ export const useData = () => {
 
   const currency = useGetValue("currency") || "EUR";
 
-  const invoiceTerms = {
+  const invoiceTerms: InvoiceTerms = {
     invoiceNumber,
     issueDate,
     dueDate,
   };
 
-  const invoiceDetails = {
+  const invoiceDetails: InvoiceItemDetails = {
     note,
     discount,
     taxRate,
@@ -51,7 +51,7 @@ export const useData = () => {
     currency,
   };
 
-  const paymentDetails = {
+  const paymentDetails: PaymentDetails = {
     bankName,
     accountNumber,
     accountName,
@@ -61,7 +61,7 @@ export const useData = () => {
     currency,
   };
 
-  const yourDetails = {
+  const yourDetails: YourDetails = {
     yourName,
     yourAddress,
     yourCity,
@@ -72,7 +72,7 @@ export const useData = () => {
     yourZip,
   };
 
-  const companyDetails = {
+  const companyDetails: CompanyDetails = {
     companyName,
     companyAddress,
     companyCity,
