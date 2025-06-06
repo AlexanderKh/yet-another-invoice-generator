@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     },
   },
   title:
-    "Free Invoice Generator: Create & Send Professional Invoices in Minutes",
+    "Yet Another Invoice Generator",
   description:
     "Get paid on time with our free invoice maker. Create professional invoices & get them to clients instantly.",
   keywords: [
@@ -37,11 +37,6 @@ export const metadata: Metadata = {
     type: "website",
     images: "/og-image.jpeg",
     siteName: "Invoice Generator",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@ThatsPranav",
-    creator: "@ThatsPranav",
   },
 };
 

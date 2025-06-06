@@ -1,6 +1,6 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
-import {defaultValue} from "@/app/(landing)/components/demoPreview";
+import {defaultValue} from "@/app/component/demoPreview";
 
 export const CompanyDetailsForm = () => (
   <div>

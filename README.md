@@ -1,9 +1,9 @@
-# Free 🧾 Invoice 🧾 Generator
+# Yet Another 🧾 Invoice 🧾 Generator
 
 This project provides a user-friendly invoice generation tool for freelancers, small businesses, and contractors. Create professional, customized invoices quickly and easily to ensure you get paid on time, every time.
 
 ## 🌐 Live Version
-[Live Invoice Generator Link](https://invoice-generator.vercel.app/)
+[Live Link](https://yet-another-invoice-generator.vercel.app/)
 
 ## ⑂ Fork Info
 This is a fork of https://github.com/pranavp10/invoice-generator.
@@ -35,8 +35,8 @@ Create `.env.local` file similar to `.env.example`.
 
 This project uses yarn
 ```bash
-git clone https://github.com/.../invoice-generator.git
-cd invoice-generator
+git clone https://github.com/AlexanderKh/yet-another-invoice-generator.git
+cd yet-another-invoice-generator
 yarn install
 yarn run dev
 ```

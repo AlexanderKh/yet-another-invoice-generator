@@ -1,21 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import {
-  CodeXml,
-  Github,
-  Hourglass,
-  Infinity,
-  Linkedin,
-  NotebookText,
-  Plus,
-  Receipt,
-  Rocket,
-  Twitter,
-} from "lucide-react";
-import Image from "next/image";
+import {CodeXml, Github, Hourglass, Infinity, NotebookText, Plus, Receipt, Rocket,} from "lucide-react";
 import Link from "next/link";
-import DemoPreview from "./components/demoPreview";
+import DemoPreview from "./component/demoPreview";
 import {Font} from "@react-pdf/renderer";
 
 const Home = () => {
@@ -23,20 +11,11 @@ const Home = () => {
     <div className="bg-[#f7f7f7] flex justify-center items-center overflow-x-hidden">
       <div className="border-l border-r max-w-4xl w-full mx-auto border-dashed h-full flex justify-center flex-col border-gray-300">
         <div className="justify-center items-center h-full flex flex-col my-10">
-          <div className="border-t border-dashed border-gray-300 w-full mx-auto py-10 flex justify-center items-center relative">
-            <Plus className="text-orange-500 group-hover:text-orange-500 w-7 h-7 absolute top-0 -translate-x-1/2 -translate-y-1/2 left-0" />
-            <Image
-              src="/android-chrome-512x512.png"
-              width={100}
-              height={100}
-              className="rounded-lg"
-              alt="logo"
-            />
-          </div>
           <div className="relative group">
+            <Plus className="text-orange-500 group-hover:text-orange-500 w-7 h-7 absolute top-0 -translate-x-1/2 -translate-y-1/2 left-0" />
             <h1 className="font-semibold text-3xl md:text-7xl text-center w-full border-t border-b py-6 border-dashed text-balance px-4 text-black border-gray-300">
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-pink-400">
-                Free Invoice Generator
+                Yet Another Invoice Generator
               </span>
             </h1>
           </div>
@@ -50,7 +29,7 @@ const Home = () => {
             </Link>
             <a
               target="_blank"
-              href="https://github.com/pranavp10/invoice-generator"
+              href="https://github.com/AlexanderKh/yet-another-invoice-generator"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border bg-transparent hover:bg-neutral-100 hover:text-accent-foreground px-6 py-1.5 text-lg gap-2 border-dashed border-gray-400"
             >
 
@@ -128,7 +107,7 @@ const Home = () => {
           </div>
         </div>
         <div className="px-5 py-11 flex justify-center items-center border-b border-dashed border-gray-300">
-          <div className="flex justify-center rounded-2xl max-w-3xl border-dashed items-center px-4 py-10 w-full flex-col gap-4  bg-gradient-to-br from-orange-100 to-pink-100">
+          <div className="flex justify-center rounded-2xl max-w-3xl border-dashed items-center px-4 py-10 w-full flex-col gap-4  bg-gradient-to-br border-gray-300 border-2">
             <p className="md:max-w-2xl text-center font-semibold text-xl text-black p-4 md:text-3xl text-balance">
               Stop wasting time and start getting paid what you deserve. Try our
               Free Invoice
@@ -145,14 +124,9 @@ const Home = () => {
           <div className="border flex justify-center items-center w-10 h-10 border-dashed rounded-lg text-2xl border-gray-300">
             <a
               target="_blank"
-              href="https://github.com/pranavp10/invoice-generator"
+              href="https://github.com/AlexanderKh/yet-another-invoice-generator"
             >
               <Github />
-            </a>
-          </div>
-          <div className="border flex justify-center items-center w-10 h-10 border-dashed rounded-lg text-2xl border-gray-300">
-            <a target="_blank" href="https://www.linkedin.com/in/pranavp10/">
-              <Linkedin />
             </a>
           </div>
         </div>

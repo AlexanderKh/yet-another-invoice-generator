@@ -1,7 +1,7 @@
 "use client";
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import DateInput from "@/app/component/ui/dateInput";
-import {defaultValue} from "@/app/(landing)/components/demoPreview";
+import {defaultValue} from "@/app/component/demoPreview";
 
 export const InvoiceTermsForm = () => (
   <div>
