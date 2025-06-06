@@ -1,4 +1,5 @@
 import type {Metadata, Viewport} from "next";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import {GeistSans} from "geist/font/sans";
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   openGraph: {
     title:
-      "Free Invoice Generator: Create & Send Professional Invoices in Minutes",
+      "Yet Another Invoice Generator",
     description:
       "Get paid on time with our free invoice maker. Create professional invoices & get them to clients instantly.",
     url: process.env.NEXT_PUBLIC_URL,
@@ -70,7 +71,10 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#f97316" />
         <meta name="theme-color" content="#f97316" />
       </head>
-      <body className={`${GeistSans.className}`}>{children}</body>
+      <body className={`${GeistSans.className}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
